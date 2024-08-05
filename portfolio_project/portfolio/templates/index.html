@@ -24,10 +24,9 @@
         <div class="project-grid">
             {% for project in projects %}
             <div class="project-card">
-                <img src="{% static 'portfolio/images/placeholder.jpg' %}" alt="{{ project.title }}">
+                <img src="{{project.upload.url}}" alt="{{ project.title }}">
                 <h3>{{ project.title }}</h3>
-                <p>{{ project.description }}</p>
-                <a href="{{ project.behance_link }}" target="_blank" class="btn">View on Behance</a>
+                <a href="{{ project.url }}" target="_blank" class="btn">View on Behance</a>
             </div>
             {% endfor %}
         </div>
