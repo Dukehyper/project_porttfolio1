@@ -15,7 +15,8 @@ class Contact(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=100)
     url = models.URLField(max_length=200)
-    upload = models.ImageField(upload_to ='uploads/') 
+    upload = models.ImageField() 
+    description = models.CharField(max_length=1000)
     
     def __str__(self):
         return self.title
