@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="container" id="#home">
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#home">
+                    <img src="{% static '/home.png' %}" alt="Cover Photo" class="icon">
+                </a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact me</a></li>
             </ul>
@@ -16,7 +18,8 @@
     <section id="about">
         <div class="hero">
             <h1 class="tagline">Hi, I am Aalok,<br>UX/UI Designer</h1>
-            <p class="description">I'm a UX/UI Designer passionate about participating in all stages of the digital product, from discovery to delivery. Helping to focus business goals on users.</p>
+            <p class="description">I'm a UX/UI Designer passionate about participating in all stages of the digital
+                product, from discovery to delivery. Helping to focus business goals on users.</p>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
         <div class="hero-img">
@@ -26,25 +29,46 @@
 
     <section id="projects">
         <h2>Featured Projects</h2>
+        <p>There's more on behance!</p>
         <div class="project-grid">
             {% for project in projects %}
             <div class="project-card">
                 <img src="{{project.upload.url}}" alt="{{ project.title }}">
-                <h3>{{ project.title }}</h3>
-                <a href="{{ project.url }}" target="_blank" class="btn">View on Behance</a>
+                <div class="project-detail">
+                    <h3>{{ project.title }}</h3>
+                    <a href="{{ project.url }}" target="_blank" class="card-btn">Behance</a>
+                </div>
             </div>
             {% endfor %}
         </div>
     </section>
 
+
+
+
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>User Research</li>
-            <li>Wireframing</li>
-            <li>UI/UX Designing</li>
-            <li>Prototyping</li>
-            <li>UI Designing</li>
+            <div class="one">
+            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+                <li>User Research</li>
+            </div>
+            <div class="two">
+            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+                <li>Wireframing</li>
+            </div>
+            <div class="three">
+            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+                <li>UI/UX Designing</li>
+            </div>
+            <div class="four">
+            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+                <li>Prototyping</li>
+            </div>
+            <div class="five">
+            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+                <li>UI Designing</li>
+            </div>
         </ul>
     </section>
 
