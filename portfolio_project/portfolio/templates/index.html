@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-<div class="container" id="#home">
+<div class="container" id="home">
     <header>
         <nav>
             <ul>
                 <li><a href="#home">
-                    <img src="{% static '/home.png' %}" alt="Cover Photo" class="icon">
+                    <img src="{% static 'home.png' %}" alt="Cover Photo" class="icon">
                 </a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact me</a></li>
@@ -23,7 +23,7 @@
             <a href="#contact" class="btn">Contact Me</a>
         </div>
         <div class="hero-img">
-            <img src="{% static '/photo.png' %}" alt="Cover Photo" class="cover-photo">
+            <img src="{% static 'photo.png' %}" alt="Cover Photo" class="cover-photo">
         </div>
     </section>
 
@@ -33,7 +33,7 @@
         <div class="project-grid">
             {% for project in projects %}
             <div class="project-card">
-                <img src="{{project.upload.url}}" alt="{{ project.title }}">
+                <img src="{{ project.upload.url }}" alt="{{ project.title }}">
                 <div class="project-detail">
                     <h3>{{ project.title }}</h3>
                     <a href="{{ project.url }}" target="_blank" class="card-btn">Behance</a>
@@ -43,46 +43,71 @@
         </div>
     </section>
 
-
-
-
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <div class="one">
-            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+            <div class="skill-item one">
+                <img src="{% static '1.png' %}" alt="User Research" class="icon">
                 <li>User Research</li>
             </div>
-            <div class="two">
-            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+            <div class="skill-item two">
+                <img src="{% static '1.png' %}" alt="Wireframing" class="icon">
                 <li>Wireframing</li>
             </div>
-            <div class="three">
-            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+            <div class="skill-item three">
+                <img src="{% static '1.png' %}" alt="UI/UX Designing" class="icon">
                 <li>UI/UX Designing</li>
             </div>
-            <div class="four">
-            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+            <div class="skill-item four">
+                <img src="{% static '1.png' %}" alt="Prototyping" class="icon">
                 <li>Prototyping</li>
             </div>
-            <div class="five">
-            <img src="{% static '/1.png' %}" alt="User Research" class="icon">
+            <div class="skill-item five">
+                <img src="{% static '1.png' %}" alt="UI Designing" class="icon">
                 <li>UI Designing</li>
             </div>
         </ul>
     </section>
 
     <section id="contact">
-        <h2>Contact Here</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn">Send Here</button>
-        </form>
+        <div class="form-info">
+            <h2>Contact Here</h2>
+            <p> 
+            Have a project idea?<br> just say me <strong>Hi</strong>.
+            </p>
+            <img src="{% static 'arrow.png' %}" alt="Arrow">
+            <div class="socials">
+                <a href="#" target="_blank"><img src="{% static 'facebook.png' %}" alt="Facebook"></a>
+                <a href="https://www.behance.net/aalokbista1" target="_blank"><img src="{% static 'behance.png' %}" alt="Behance"></a>
+                <a href="#" target="_blank"><img src="{% static 'twitter.png' %}" alt="Twitter"></a>
+                <a href="https://www.instagram.com/aalokdesigns/" target="_blank"><img src="{% static 'instagram.png' %}" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/aalokbista/" target="_blank"><img src="{% static 'linkedin.png' %}" alt="LinkedIn"></a>
+                <a href="https://dribbble.com/aalokbista" target="_blank"><img src="{% static 'dribble.png' %}" alt="Dribble" style="color: black;"></a>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_name">Name</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="id_email">Your Email</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="id_about_project">About Project</label>
+                    {{ form.about_project }}
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>Copyright ©2023 All rights reserved</p>
+        <p>Copyright ©2024 All rights reserved</p>
     </footer>
 </div>
 {% endblock %}

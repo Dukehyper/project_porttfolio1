@@ -229,7 +229,61 @@ h1, h2, h3 {
     line-height: normal;
 }
 
-#contact form {
+#contact{
+    display: flex;
+    flex-direction: row;
+}
+
+#contact .form-info{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+#contact .form-info h2{
+    display: inline-block;
+    margin: 0 auto;
+    color: #0C0C0C;
+    text-align: left;
+    -webkit-text-stroke-width: 0.5;
+    -webkit-text-stroke-color: #0C0C0C;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #87CEEB;
+}
+
+#contact .form-info p{
+    color: #0C0C0C;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+}
+
+#contact .form-info img{
+    display: inline-block;
+    margin: 0 auto;
+}
+#contact .form-info .socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+#contact .form-info .socials a img{
+    width: 30px;
+    height: 30px;
+}
+
+
+/* #contact form {
     max-width: 500px;
     margin: 0 auto;
 }
@@ -239,7 +293,56 @@ h1, h2, h3 {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+} */
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
 }
+
+.form-group label {
+    position: absolute;
+    top: -20px;
+    background-color: #87CEEB; /* Light blue background color */
+    padding: 2px 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 2px solid #000;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    outline: none;max-height: 50px;
+    max-width: 50px;
+    border-bottom: 2px solid #000;
+}
+
+
+/* #contact .form-field form button{
+    display: inline-flex;
+    padding: 15px 48px;
+    align-items: flex-start;
+    gap: 10px;
+    width:fit-content;
+    border-radius: 30px;
+    background: #87CEEB;
+    box-shadow: 0px 16px 14px 0px rgba(0, 0, 0, 0.12);
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+} */
 
 footer {
     /* background-color: #87CEEB; */
@@ -281,7 +384,7 @@ footer {
     line-height: normal;
 }
 
-#about .hero a{
+#about .hero a, .submit-btn{
     display: inline-flex;
     padding: 15px 48px;
     align-items: flex-start;
@@ -297,6 +400,7 @@ footer {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    border: transparent;
 }
 
 #about .hero-img{
